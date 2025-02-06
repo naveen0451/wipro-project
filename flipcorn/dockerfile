@@ -12,4 +12,4 @@ COPY . /SOCIAL_MEDIA-APP
 #Expose the application on the specific port number
 EXPOSE 87
 #start apache server
-ENTRYPOINT apache1 -D FOREGROUND
+ENTRYPOINT apachectl -D FOREGROUND
