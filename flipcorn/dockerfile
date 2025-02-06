@@ -1,0 +1,15 @@
+#Define the parent image
+FROM ubuntu 
+#setup the working Directory
+WORKDIR /SOCIAL_MEDIA-APP
+#update the ubuntu os
+RUN apt-get update -y
+#To install apache2 webserver
+RUN apt-get install apache2 -y
+#Copy all the files from local machine to inside webserver default directory  /var/www/html
+COPY . /var/www/html
+COPY . /SOCIAL_MEDIA-APP
+#Expose the application on the specific port number
+EXPOSE 87
+#start apache server
+ENTRYPOINT apache1 -D FOREGROUND
